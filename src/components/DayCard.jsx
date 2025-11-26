@@ -5,7 +5,7 @@ const DayCard = ({ day, isOpen, onOpen, isLocked }) => {
   return (
     <motion.div
       layoutId={`card-${day.id}`}
-      onClick={() => !isLocked && onOpen(day)}
+      onClick={() => onOpen(day)}
       whileHover={{ scale: 1.05, rotate: Math.random() * 4 - 2 }}
       whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ const DayCard = ({ day, isOpen, onOpen, isLocked }) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        cursor: isLocked ? 'not-allowed' : 'pointer',
+        cursor: 'pointer',
         position: 'relative',
         overflow: 'hidden',
         backdropFilter: 'blur(10px)',
